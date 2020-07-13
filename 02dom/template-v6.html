@@ -1,0 +1,27 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <p v-once>{{ titulo }}</p>
+    <p c3r-bind="abc">{{ saudacao() }}</p>
+    <a v-bind:href="link">Github</a>
+    <hr>
+    <p v-html="linkHtml"></p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS2',
+            link: 'https://github.com/GustavoMori',
+            linkHtml: '<a href="https://github.com/GustavoMori">Editando Html Github</a>'
+        },
+        methods: {
+            saudacao: function(){
+                this.titulo = 'Buenos Dias!'
+                return this.titulo
+            }
+        }
+    })
+    //v-html É uma diretiva utilizada para adicionar o HTML puro com um link
+</script>

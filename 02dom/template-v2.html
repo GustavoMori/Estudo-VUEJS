@@ -1,0 +1,23 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+</div>
+
+<script>
+    //double mustache interpreta algo para string pois html é do tipo TEXTUAL, ou seja, string
+    //Vue cria acessos diretos!
+    //qnd for utilizar no html, ao chamar uma funcao, chame como funcao "()"
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS2'
+        },
+        methods: {
+            saudacao: function(){
+                return 'Boa semana!'
+            }
+        }
+    }) 
+</script>

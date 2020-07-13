@@ -1,0 +1,26 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <p v-once>{{ titulo }}</p>
+    <p c3r-bind="abc">{{ saudacao() }}</p>
+    <a v-bind:href="link">Github</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS2',
+            link: 'https://github.com/GustavoMori'
+        },
+        methods: {
+            saudacao: function(){
+                this.titulo = 'Buenos Dias!'
+                return this.titulo
+            }
+        }
+    })
+    // Sempre que ha uma alteração do valor na instância a VUE é automaticamente atualizada
+    // com v-once ele vai renderizar sempre o primeiro valor
+    // e o outro continuará sendo mudado conforme for atualizado
+</script>
